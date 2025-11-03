@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GainChat | Dashboard</title>
+    <meta name="description" content="Make money online by watching videos and ads. Stay connected with our global chat community while increasing your daily earnings.">
+    <meta name="author" content="GainChat Team">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="top-bar">
+        <button id="menu-btn"><img id="menu-icon" src="/images/menu.png" alt="Menu" loading="lazy"></button>
+        <div class="logo">GainChat</div>
+        <div class="wallet-info">
+            <span class="balance" id="balanceNav">$0</span>
+            <img id="photoTopBar" src="/images/profile-picture.png" alt="Profile Photo" loading="lazy">
+        </div>
+        
+    </div>
+    <div class="left-menu" id="left-menu">
+        <div class="menu-buttons">
+            <a class="active">Dashboard</a>
+            <a href="chat.html">Chat</a>
+            <a href="watch-earn.html">Watch Earn</a>
+            <a href="profile.html">Profile</a>
+            <a href="wallet.html">Wallet</a>
+            <a href="about-contact.html" id="about-contact">About & Contact</a>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="info-bar">
+            <h1>Welcome to GainChat Dashboard</h1>
+            <p>This is your dashboard where you can manage your account and view your activities.</p>
+        </div>
+        <div class="dashboard-elements">
+            <button class="db-wallet">
+                <h2>Wallet Balance</h2>
+                <h1 id="wallet-balance">$0</h1>
+                <p>Average change: <span>+30.4%</span></p>
+                <a href="wallet.html"><b>My wallet</b></a>
+            </button>
+            <button class="db-statistics" onclick="location.href='wallet.html'">
+                <h2>Statistics</h2>
+                <div style="width: 90%; height: 70%; margin-left: 18px; margin-top: 10px;">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </button>
+            <button class="db-recent-activity" onclick="location.href='wallet.html'">
+                <h2>Recent activities</h2>
+                <div class="recents-container">
+                </div>
+            </button>
+        </div>
+    </div>
+    <div class="message-overlay" id="messageOverlay">
+        <div class="message-bar">
+            <p>This is a message!</p>
+            <button id="okBtn">OK</button>
+        </div>
+    </div>
+
+    <button id="showBtn">Show Message</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

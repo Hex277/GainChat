@@ -1,0 +1,301 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #0D0D0D;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 6%;
+    padding-bottom: 10%;
+    font-family: sans-serif;
+}
+.fixed-background {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0F0F0F;
+    z-index: -1;
+    justify-content: center;
+    align-items: center;
+}
+
+.enterance-background {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 85vh; 
+    width: 75%;
+    max-width: 1200px;
+    border-radius: 40px;
+    background-color: #1C1C1C;
+    justify-content: space-between;
+    overflow: hidden; /* ✅ Contain the scroll inside right-part only */
+}
+
+
+.left-part {
+    height: 100%; 
+    width: 50%;
+    background-color: green;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+}
+.right-part {
+    position: relative;
+    height: 100%;
+    width: 50%;
+    background-color: #1C1C1C;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    padding: 60px 40px; /* gives breathing space around content */
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    display: flex;
+    justify-content: center; /* horizontal centering */
+}
+
+.right-inner {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100%; 
+    box-sizing: border-box;
+}
+
+.right-part h1, .right-part-verification h1 {
+    margin-top: -30px;
+    padding: 10px;
+    width: 80%;
+    color: #FFFFFF;
+}
+.right-part #info-p, .right-part-verification #info-p {
+    padding: 30px;
+    margin-top: -35px;
+    width: 70%;
+    color: #CCCCCC;
+}
+
+.form-fill {
+    height: auto;
+    width: 80%;
+    margin-top: -40px;
+    background-color: #1C1C1C;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-fill p {
+    padding: 0px;
+    margin-top: 10px;
+    margin-left: 10px;
+    display: flex;
+    color: #CCCCCC;
+
+}
+.form-fill input {
+    display: flex;
+    margin-top: -15px;
+    border-radius: 12px;    
+    font-size: 18px;
+    padding: 12px;
+    background-color: #1A1A1A;
+    color: #FFFFFF;
+    border-color: #00FF84;
+}
+.form-fill input:focus {
+    outline: none;
+    transition: all 0.3s ease;
+    border: 2px solid #5affaf;
+}
+.form-buttons {
+    height: auto;
+    width: 75%;
+    background-color: #1C1C1C;
+    color: #0D0D0D;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    padding: 10px;
+    margin-top: 5px;
+    max-width: 350px;
+    gap: 5px;
+}
+.form-buttons p {
+    padding: 0px;
+    width: auto;
+    color: #CCCCCC;
+}
+.form-buttons a {
+    text-decoration: none;
+    color: #00FF84;
+    font-weight: 600;
+}
+.form-buttons button {
+    background-color: #00FF84;
+    color: #0D0D0D;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form-buttons button:hover {
+    background-color: #00CC66;
+    box-shadow: 0px 0px 12px rgba(0, 255, 132, 0.4);
+}
+
+.form-buttons button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(0, 255, 132, 0.3);
+}
+
+/* Right Part Verification */
+.right-part-verification {
+    position: relative;
+    height: 100%;
+    width: 50%;
+    background-color: #1C1C1C;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    padding: 60px 40px; /* gives breathing space around content */
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    display: none;
+    justify-content: center; /* horizontal centering */
+}
+.right-part,
+.right-part-verification {
+  transition: opacity 0.3s ease;
+}
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.right-part-verification #email {
+    color: rgb(205, 205, 205);
+}
+.verification-code {
+  position: relative;
+  display: inline-block;
+}
+
+#verification {
+  position: absolute;
+  opacity: 0;
+  caret-color: white;
+}
+.verify-input {
+  width: 240px;
+  font-size: 24px;
+  letter-spacing: 12px;  /* creates spacing between digits */
+  text-align: center;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  outline: none;
+  caret-color: black; /* show the blinking cursor */
+}
+
+.verify-input:focus {
+  border-color: #007bff;
+}
+
+.code-boxes {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.code-boxes span {
+  width: 40px;
+  height: 50px;
+  border: 2px solid #00ff84;
+  border-radius: 8px;
+  font-size: 24px;
+  text-align: center;
+  line-height: 50px;
+  color: white;
+  background: #1d1d1d;
+}
+/* Message Overlay Styles */
+/* Full-screen dark overlay (blocks background clicks) */
+.message-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+/* Centered message box */
+.message-bar {
+    background-color: #1d1d1d;
+    color: white;
+    border: 1px solid #00FF84;
+    border-radius: 15px;
+    width: 25%;
+    height: auto;
+    padding: 30px;
+    text-align: center;
+    align-content: center;
+}
+
+.message-bar button {
+    background: #00FF84;
+    border: none;
+    padding: 9px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #1d1d1d;
+}
+
+.message-bar button:hover {
+    background: #00cc66;
+}
+/* Mobile Styles */
+@media (max-width: 768px) {
+    body {
+        padding: 0px;
+    }
+    .enterance-background {
+        justify-content: center;
+        flex-direction: column;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+    }
+    .right-part {
+        width: 90%;
+        border-radius: 0;
+        height: 100vh;
+    }
+    .right-part h1 {
+        margin-top: 50px;
+        color: #FFFFFF;
+    }
+    .left-part {
+        display: none;
+    }
+}

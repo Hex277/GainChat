@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GainChat | Create a new account</title>
+    <meta name="author" content="GainChat Team">
+    <link rel="stylesheet" href="enterance.css">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <style>
+        .form-buttons {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="fixed-background">
+        <div class="enterance-background">
+            <div class="left-part">
+
+            </div>
+            <div class="right-part">
+                <div class="right-inner">
+                    <h1>Create a new account</h1>
+                <p id="info-p">Join our platform, increase your daily earnings with ads, and connect with our global chat community.</p>
+                <div class="form-fill">
+                    <p>Username:</p>
+                    <input type="name" id="username" placeholder="Username">
+                    <p>Email:</p>
+                    <input type="email" id="email" placeholder="example@gmail.com">
+                    <p>Password:</p>
+                    <input type="password" id="password" placeholder="********">
+                </div>
+                <div class="form-buttons">
+                    <p>Already have an account? <a href="/Enterance/login.html">Login</a></p>
+                    <button id="create-btn" type="submit">Create</button>
+                </div>
+                </div>
+                
+            </div>
+            <div class="right-part-verification">
+                <div class="right-inner">
+                    <h1>Verify your email</h1>
+                    <p id="info-p">We’ve sent a verification link to your Gmail address. Open your inbox and confirm your email to continue.</p>
+                    <div class="form-fill">
+                        <p>Email:</p>
+                        <input type="email" id="email" disabled>
+                        <p>6 Digit Code:</p>
+                        <div class="verification-code">
+                            <input type="text" class="verify-input" id="verification" maxlength="6" inputmode="numeric">
+                            <div class="code-boxes" id="code-boxes">
+                                <span></span><span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-buttons">
+                        <p>Wrong email address? <a href="register.html" style="white-space: nowrap;">Go back</a></p>
+                        <button id="verify-btn" type="submit">Verify</button>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+        <div class="message-overlay" id="messageOverlay">
+            <div class="message-bar">
+                <p>This is a message!</p>
+                <button id="okBtn">OK</button>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script src="enterance.js"></script>
+</body>
+</html>
