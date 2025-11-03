@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Textarea with Character Counter</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #0f172a;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    .textarea-container {
+      position: relative;
+      width: 50ch;
+    }
+
+    textarea {
+      width: 100%;
+      height: 150px;
+      padding: 10px;
+      font-size: 16px;
+      line-height: 1.5;
+      background: #1e293b;
+      color: #fff;
+      border: 2px solid #38bdf8;
+      border-radius: 10px;
+      resize: none;
+      outline: none;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      box-sizing: border-box;
+    }
+
+    .counter {
+      position: absolute;
+      bottom: 8px;
+      right: 12px;
+      font-size: 14px;
+      color: #94a3b8;
+      pointer-events: none;
+    }
+
+    label {
+      position: absolute;
+      top: -30px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="textarea-container">
+    <label for="textInput">Enter text (max 500 chars):</label><br><br>
+    <textarea id="textInput" maxlength="500" placeholder="Start typing..."></textarea>
+    <div class="counter" id="counter">0 / 500</div>
+  </div>
+
+  <script>
+    const textarea = document.getElementById("textInput");
+    const counter = document.getElementById("counter");
+
+    textarea.addEventListener("input", () => {
+      counter.textContent = `${textarea.value.length} / 500`;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GainChat | Wallet</title>
+    <meta name="description" content="Make money online by watching videos and ads. Stay connected with our global chat community while increasing your daily earnings.">
+    <meta name="author" content="GainChat Team">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .main-content {
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .main-content p {
+            padding: 10px;
+            width: 200px;
+        }
+        @media (max-width: 1000px) and (min-width: 770px) {
+            .my-wallet {
+                flex-direction: column;
+                height: auto;
+                align-items: center;
+            }
+            .statistics-label {
+                margin-top: 10px;
+                width: 90%;
+                height: 250px;
+                margin-left: 0px;
+            }
+            .total-balance {
+                width: 50%;
+                height: 30%;
+            }
+    }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <button id="menu-btn"><img id="menu-icon" src="/images/menu.png" alt="Menu" loading="lazy"></button>
+        <div class="logo">GainChat</div>
+        <div class="wallet-info">
+            <span class="balance" id="balanceNav">$100</span>
+            <img id="photoTopBar" src="/images/profile-picture.png" alt="Profile Photo">
+        </div>
+    </div>
+    <div class="left-menu" id="left-menu">
+        <div class="menu-buttons">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="chat.html">Chat</a>
+            <a href="watch-earn.html">Watch Earn</a>
+            <a href="profile.html">Profile</a>
+            <a class="active">Wallet</a>
+            <a href="about-contact.html" id="about-contact">About & Contact</a>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="wallet-background">
+            <div class="my-wallet">
+                <div class="total-balance">
+                    <h1>My wallet</h1>
+                    <p>Current balance</p>
+                    <h2 id="wallet-balance">0$</h2>
+                    <button>Withdraw</button>
+                </div>
+                <div class="statistics-label">
+                    <div class="statistics-top">
+                        <h2>Statistics</h2>
+                        <select name="select-time" id="select-time">
+                        <option value="this-week">This week</option>
+                        <option value="this-month">This month</option>
+                        <option value="this-year">This year</option>
+                        <option value="all-time">All time</option>
+                        </select>
+                    </div>
+
+                    <div class="statistics-main">
+                        <canvas id="myChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="message-overlay" id="messageOverlay">
+        <div class="message-bar">
+            <p>This is a message!</p>
+            <button id="okBtn">OK</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

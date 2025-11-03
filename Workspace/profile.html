@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GainChat | Edit your profile</title>
+    <meta name="description" content="Make money online by watching videos and ads. Stay connected with our global chat community while increasing your daily earnings.">
+    <meta name="author" content="GainChat Team">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .main-content p {
+            margin-right: 0px;
+        }
+        @media (max-width: 768px) {
+            .main-content {
+                overflow-x: hidden;
+            }
+            #profile_p {
+                margin-top: -30px;
+                padding: 30px;
+                font-size: 16px;
+            }
+            .wallet-info {
+                margin-right: 18px;
+            }
+            .main-content p {
+                padding: 0px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <button id="menu-btn"><img id="menu-icon" src="/images/menu.png" alt="Menu" loading="lazy"></button>
+        <div class="logo">GainChat</div>
+        <div class="wallet-info">
+            <span class="balance" id="balanceNav">$100</span>
+            <img id="photoTopBar" src="/images/profile-picture.png" alt="Profile Photo">
+        </div>
+    </div>
+    <div class="left-menu" id="left-menu">
+        <div class="menu-buttons">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="chat.html">Chat</a>
+            <a href="watch-earn.html">Watch Earn</a>
+            <a class="active">Profile</a>
+            <a href="wallet.html">Wallet</a>
+            <a href="about-contact.html" id="about-contact">About & Contact</a>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="profile-background">
+            <div class="profile-stand">
+                <h1>Edit your profile</h1>
+                <p id="profile_p">Keep your profile up to date and enjoy a more personalized experience</p>
+                <div class="form-fill">
+                    <div class="display-profile-photo">
+                        <p id="pp_word">Profile photo:</p>
+                        <img id="photoPreview" src="/images/profile-picture.png" alt="Profile Photo">
+                    </div> 
+                    <div class="form-elements">
+                        <p>Username:</p>
+                        <input type="text" placeholder="Cavid_123">
+                        <p>Email:</p>
+                        <input type="text" placeholder="cavidyt0@gmail.com">
+                        <p>Password:</p>
+                        <input type="text" placeholder="******">
+                        <p>Bio:</p>
+                        <div class="textarea-container">
+                            <textarea id="profile-bio" maxlength="150"></textarea>
+                            <div class="counter" id="counter">0 / 150</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttons-profile">
+                    <div class="delete-log-out">
+                        <button id="delete-account">Delete Account</button>
+                        <button id="log-out">Log out</button>
+                    </div>
+                    <div class="save-btn-bg">
+                        <button id="save-profile">Save</button>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+    <div class="message-overlay" id="messageOverlay">
+        <div class="message-bar">
+            <p>This is a message!</p>
+            <button id="okBtn">OK</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

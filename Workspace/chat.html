@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GainChat | Chat</title>
+    <meta name="description" content="Make money online by watching videos and ads. Stay connected with our global chat community while increasing your daily earnings.">
+    <meta name="author" content="GainChat Team">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top-bar">
+        <button id="menu-btn"><img id="menu-icon" src="/images/menu.png" alt="Menu" loading="lazy"></button>
+        <div class="logo">GainChat</div>
+        <div class="wallet-info">
+            <span class="balance" id="balanceNav">$100</span>
+            <img id="photoTopBar" src="/images/profile-picture.png" alt="Profile Photo">
+        </div>
+    </div>
+    <div class="left-menu" id="left-menu">
+        <div class="menu-buttons">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="chat.html" class="active">Chat</a>
+            <a href="watch-earn.html">Watch Earn</a>
+            <a href="profile.html">Profile</a>
+            <a href="wallet.html">Wallet</a>
+            <a href="about-contact.html" id="about-contact">About & Contact</a>
+        </div> 
+    </div>
+    <div class="main-content">
+        <div class="chat-background">
+            <div class="select-country">
+                <h1>Select Your Country to Start Chatting</h1>
+                <p>Join the global chat for your selected country and start connecting instantly</p>
+                <div class="countries">
+                    <button id="country" name="Global">Join Global Chat</button>
+                    <button id="country" name="Country2">Country 2</button>
+                    <button id="country" name="Country3">Country 3</button>
+                    <button id="country" name="Country4">Country 4</button>
+                    <button id="country" name="Country5">Country 5</button>
+                </div>
+                
+                <div class="selected-chat">
+                    <div class="sc-top-bar">
+                        <h1>Global</h1>
+                        <button id="leaveChatBtn">Leave Chat</button>
+                    </div>
+                    <div class="sc-bg">
+                    </div>
+                    <div class="sc-elements">
+                        <input type="text" placeholder="Type your message here..." id="chatInput">
+                        <button id="sendBtn"><img src="/images/send.png" alt="Send"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="message-overlay" id="messageOverlay">
+        <div class="message-bar">
+            <p>This is a message!</p>
+            <button id="okBtn">OK</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

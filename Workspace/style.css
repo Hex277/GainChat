@@ -1,0 +1,979 @@
+body {
+    background-color: #0D0D0D;
+    margin: 0;
+    overflow-x: hidden;
+    font-family: sans-serif;
+}
+button:hover {
+    background-color: #00CC66;
+    box-shadow: 0px 2px 12px rgba(0, 255, 132, 0.4);
+}
+
+button:active {
+    transform: translateY(1px);
+    background-color: #00CC66;
+    box-shadow: 0 2px 30px rgba(0, 255, 132, 0.5);
+}
+input:focus, #profile-bio:focus {
+    box-shadow: 0 2px 4px rgba(0, 255, 132, 0.5);
+}
+/* Top bar styles */
+.top-bar {
+    position: fixed;
+    background-color: #0D0D0D;
+    height: 65px;
+    width: 100%;
+    color: white;
+    z-index: 100;
+}
+.wallet-info {
+    display: flex; 
+    align-items: center; 
+    text-align: left;
+    justify-content: center;
+    margin-top: -27px;
+    background-color: #1d1d1d;
+    border: 1px solid #00FF84;
+    width: auto;
+    position: fixed;
+    right: 0; 
+    top: 35px;
+    border-radius: 40px;
+    padding: 4px;
+    margin-right: 10px;
+}
+.wallet-info span {
+    margin-right: 10px;
+    margin-left: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+#photoTopBar {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+/* Left menu styles */
+
+.left-menu {
+    background-color: #141414;
+    height: 100vh;
+    width: 220px;
+    margin-top: 65px;
+    position: fixed;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+}
+
+.menu-buttons {
+    display: flex;
+    flex-direction: column;
+    margin-top: -50px;
+}
+
+.menu-buttons a {
+    background-color: #141414;
+    color: white;
+    border-bottom: 1px solid #00FF84;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    justify-content: center;
+    padding: 10px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    width: 180px;
+    margin-left: 8px;
+}
+.menu-buttons a:hover {
+    background-color: #1d1d1d;
+    border-left: 4px solid #00FF84;
+    transition: all 0.3s ease;
+}
+.menu-buttons a.active {
+    background-color: #1d1d1d;      
+    border-left: 4px solid #00FF84;  
+    color: #00FF84;            
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.menu-buttons #about-contact {
+    border-bottom: none;
+}
+.logo {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Main content styles */
+
+.main-content {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: #1d1d1d;
+    top: 65px; 
+    margin-left: 220px;
+    padding: 0px;
+}
+
+.main-content h1 {
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+    margin-right: 220px;
+    color: white;
+}
+.main-content p {
+    padding: 20px;
+    padding-right: 80px;
+    padding-left: 80px;
+    text-align: center;
+    margin-top: -30px;
+    margin-right: 220px;
+    font-size: 18px;
+    color: #CCCCCC;
+}
+
+/* Dashboard Styles */
+.dashboard-elements {
+    display: flex;               
+    justify-content: center;    
+    align-items: stretch;         
+    flex-wrap: wrap;          
+    gap: 10px;            
+    background-color: #1d1d1d;
+    margin-right: 220px;
+    padding: 10px;
+}
+
+.db-wallet, .db-statistics, .db-recent-activity {
+    background-color: #1d1d1d;
+    border: 1px solid #00FF84;
+    color: white;
+    min-width: 350px;
+    height: 200px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.dashboard-elements button:hover {
+    box-shadow: 0px 0px 12px rgba(0, 255, 132, 0.4);
+    background-color: transparent;
+}
+.dashboard-elements button:active {
+    transform: none;
+    background-color: transparent;
+    box-shadow: none;
+}
+.db-wallet p, .db-recent-activity p {
+    width: auto;
+    margin:0px;
+    padding: 0px;
+    color: #00FF84;
+    font-size: 16px;
+    padding-bottom: 20px;
+}
+.db-wallet h1, .db-recent-activity h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 40px;
+    color: white;
+    margin-top: 20px;
+}
+.db-wallet h2, .db-recent-activity h2, .db-statistics h2 {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    margin-left: 20px;
+    margin-top: -10px;
+}
+.db-wallet a, .db-recent-activity a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    height: 30px;
+    width: 50%;
+    background-color: #00FF84;
+    padding: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 12px;
+}
+.db-statistics h2 {
+    margin-top: 0px;
+}
+.db-statistics canvas {
+      background: #1d1d1d;
+      width: 100% !important;
+      height: 100% !important;
+}
+.db-recent-activity .recents-container {
+    background-color: #1d1d1d;
+    height: 70%;
+    overflow-y: auto;
+    margin-top: 10px;
+    width: 95%;
+    margin-left: 8px;
+}
+.recent-item {
+    background-color: transparent;
+    padding: 10px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 5px rgba(0, 255, 132, 0.3);
+}
+.recent-item .info {
+    text-align: left;
+}
+
+.recent-item .time {
+    text-align: right;
+    font-size: 12px;
+    color: #94a3b8; /* slightly lighter color for timestamp */
+}
+/* Watch Earn Styles */
+.earn-methods {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    background-color: #242424;
+    border-bottom: 1px solid #00FF84;
+    margin-right: 220px;
+}
+
+.earn-methods button.active {
+    border: 1px solid #00FF84;    
+    box-shadow: 0px 0px 12px rgba(0, 255, 132, 0.4);
+    background-color: #00ff842f;
+    transition: box-shadow 0.4s ease, background-color 0.3s ease, transform 0.2s ease;
+
+}
+.earn-methods button:hover {
+    border: 1px solid #00FF84;
+    background-color: #1d1d1d;
+    transition: box-shadow 0.4s ease, background-color 0.3s ease, transform 0.2s ease;
+    transform: scale(1.05);
+}
+.earn-youtube, .earn-ads, .earn-websites {
+    font-size: 24px;
+    background-color: #242424;
+    color: white;
+    box-sizing: border-box;
+    border: none;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+.earn-youtube, .earn-ads {
+    border-right: 1px solid #00FF84;
+}
+.watch-youtube-frame {
+    display: flex;
+}
+.watch-ads-frame, .visit-websites-frame {
+    display: none;
+}
+.watch-youtube-frame, .watch-ads-frame, .visit-websites-frame {
+    width: 100%;
+    height: 100%;
+    background-color: #242424;
+}
+
+/* Chat Styles */
+.chat-background {
+    background-color: #050505;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.select-country {
+    background-color: #1d1d1d;
+    height: 100vh;
+    width: 50%;
+    margin-right: 220px;
+    text-align: center;
+    align-items: center;
+}
+.select-country h1, .select-country p {
+    margin-right: 0px;
+}
+.countries {
+    background-color: #1d1d1d;
+}
+#country {
+    height: 50px;
+    background-color: #1d1d1d;
+    border: 1px solid #00FF84;
+    color: white;
+    border-radius: 10px;
+    width: 90%;
+    text-align: left;
+    padding-left: 20px;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.selected-chat {
+    background-color: #1d1d1d;
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    display: none;
+    flex-direction: column;
+}
+.sc-bg {
+    background-color: #242424;
+    height: 60%;
+    width: 95%;
+    margin-top: 10px;
+    align-self: center;
+    border-radius: 15px;
+}
+.sc-top-bar {
+    background-color: transparent;
+    height: 60px;
+    width: 95%;
+    margin-top: 63px;
+    align-self: center;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+}
+.sc-top-bar button {
+    border: 1px solid #ff0000;
+    background-color: transparent;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.sc-top-bar button:hover {
+    background-color: #ff0000;
+    box-shadow: 0px 2px 12px rgba(255, 0, 0, 0.4);
+    color: white;
+}
+.sc-top-bar h1 {
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+.sc-elements {
+    background-color: #242424;
+    border: 1px solid #00FF84;
+    border-radius: 30px;
+    height: 9%;
+    width: 95%;
+    margin-top: 20px;
+    align-self: center;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.sc-elements input {
+    background-color: #242424;
+    border: none;
+    box-shadow: none;
+    color: white;
+    width: 100%;
+    height: 30px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 30px;
+    padding-left: 20px;
+}
+.sc-elements input:focus {
+    outline: none;
+}
+.sc-elements button {
+    background-color: transparent;
+    border-radius: 33px;
+    position: absolute;
+    right: 10px;
+    border: none;
+}
+.sc-elements button:hover {
+    background-color: #00FF84;
+}
+.sc-elements button img {
+    margin-top: 3px;
+    height: 30px;
+    width: 30px;
+    filter: invert(1);
+}
+/* Wallet Styles */
+.wallet-background {
+    height: 100vh;
+    width: 100%;
+    padding: 20px;
+    background-color: #242424;
+    display: flex;
+    justify-content: center;
+}
+.my-wallet {
+    background-color: #1d1d1d;
+    height: 50%;
+    width: 80%;
+    border-radius: 10px;
+    margin-right: 220px;
+    display: flex;
+    flex-direction: row;
+}
+
+.my-wallet h1 {
+    margin: 0;
+    text-align: left;
+    position: absolute;
+    margin-top: -200px;
+}
+
+.total-balance {
+    background-color: #1d1d1d;
+    height: 70%;
+    width: 25%;
+    margin-left: 10px;
+    margin-top: 60px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.total-balance p {
+    padding: 0px;
+    text-align: center;
+    margin-top: 0px;
+    margin-right: 0px;
+    font-size: 18px;
+}
+.total-balance h2 {
+    margin-top: -10px;
+    font-size: 34px;
+    color: white;
+}
+.total-balance button {
+    border: 1px solid #00FF84;
+    border-radius: 10px;
+    background-color: #1d1d1d;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    width: 70%;
+    margin-top: -20px;
+    transition: 
+        background-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.2s ease;
+}
+.total-balance button:hover {
+    background-color: #00CC66;
+}
+
+.statistics-label {
+    background-color: transparent;
+    height: 90%;
+    width: 68%;
+    margin-top: 12px;
+    margin-left: 20px;
+}
+
+.statistics-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    height: 20%;
+    background-color: #1d1d1d;
+}
+.statistics-top h2 {
+    color: white;
+    display: block;
+}
+.statistics-top select {
+    height: 35px;
+    background-color: transparent;
+    border: 1px solid #00FF84;
+    color: white;
+    border-radius: 10px;
+    width: auto;
+    text-align: left;
+    padding-left: 20px;
+    font-size: 16px;
+}
+.statistics-main {
+  width: 100%;
+  height: 80%; /* you can adjust */
+  position: relative;
+}
+
+.statistics-main canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+/* Profile Styles */
+.profile-background {
+    height: auto;
+    width: 100%;
+    background-color: #050505;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 220px;
+}
+.profile-stand {
+    background-color: #1d1d1d;
+    width: 50%;
+    height:100%;
+    text-align: center;
+    margin-right: 220px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.profile-stand h1 {
+    text-align: left;
+    width: 100%;
+    margin-left: 270px; 
+}
+.form-fill {
+    background-color: #1d1d1d;
+    height: auto;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin-top: -20px;
+}
+.form-fill input {
+    border-radius: 10px;
+    border: none;
+    font-size: 18px;
+    padding: 0px;
+    width: 97%;
+    margin-top: -18px;
+    background-color: #1d1d1d;
+    border: 1px solid #00FF84;
+    color: white;
+    justify-content: center;
+    padding: 10px;
+}
+.textarea-container {
+      position: relative;
+      width: 100%;
+}
+textarea {
+    resize: none;
+    outline: none;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    box-sizing: border-box;
+}
+.textarea-container #profile-bio {
+    resize: none;
+    min-height: 100px;
+    border-radius: 10px;
+    border: none;
+    font-size: 17px;
+    padding: 0px;
+    width: 100%;
+    margin-top: -18px;
+    background-color: #1d1d1d;
+    border: 1px solid #00FF84;
+    color: white;
+    justify-content: center;
+    padding: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    box-sizing: border-box;
+}
+.counter {
+    position: absolute;
+    bottom: 8px;
+    right: 12px;
+    font-size: 14px;
+    color: #94a3b8;
+    pointer-events: none;
+}
+.form-fill input:focus, #profile-bio:focus {
+    outline: none;
+    border: 1px solid #00CC66;
+}
+.form-fill p {
+    text-align: left;
+    width: 100%;
+    margin-left: 265px;
+    display: block;
+    margin-top: 0px;
+}
+
+.buttons-profile {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0px;
+    background-color: #1d1d1d;
+    width: 80%;
+    justify-content: space-between;
+    padding-bottom: 50px;
+    margin-top: 15px;
+}
+.buttons-profile button {
+    border: 1px solid #00FF84;
+    color: white;
+    border-radius: 10px;
+    background-color: #1d1d1d;
+    font-size: 17px;
+    height: 35px;
+    white-space: nowrap;
+    padding: 0 15px;
+}
+.buttons-profile #log-out {
+    background-color: #1d1d1d;
+    border: 1px solid #ff0000;
+    color: white;
+    margin-left: 5px;
+}
+.buttons-profile #delete-account {
+    background-color: #1d1d1d;
+    border: 1px solid #ff0000;
+    color: white;
+    margin-right: 5px;
+}
+.buttons-profile #delete-account:hover, #log-out:hover {
+    box-shadow: 0px 2px 12px rgba(255, 0, 0, 0.4);
+    background-color: #1d1d1d;
+    transition: all 0.3s ease;
+}
+.display-profile-photo {
+    background-color: #1d1d1d;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.display-profile-photo p {
+    margin-left: 0px;
+    padding: 0px;   
+    margin: 0px;
+    align-content: center;
+    margin-left: 13px;
+}
+.display-profile-photo img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.form-elements {
+    background-color: #1d1d1d;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form-elements p {
+    margin: 0px;
+    margin-left: 25px;
+} 
+/* Message Overlay Styles */
+/* Full-screen dark overlay (blocks background clicks) */
+.message-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+/* Centered message box */
+.message-bar {
+    background-color: #1d1d1d;
+    color: white;
+    border: 1px solid #00FF84;
+    border-radius: 15px;
+    width: 25%;
+    height: auto;
+    padding: 30px;
+    text-align: center;
+    align-content: center;
+}
+
+.message-bar button {
+    background: #00FF84;
+    border: none;
+    padding: 9px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #1d1d1d;
+}
+
+.message-bar button:hover {
+    background: #00cc66;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    /* Left Menu Styles */
+    .left-menu {
+        display: flex; /* always flex */
+        z-index: 999;
+        margin: 0;
+        width: 60%;
+        align-items: center;
+        border-top-right-radius: 30px;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        z-index: 998;
+        transform: translateX(-100%); /* hidden initially */
+        transition: transform 0.3s ease; /* smooth slide */
+    }
+    .left-menu.open {
+        transform: translateX(0); /* visible */
+    }
+
+    .menu-buttons {
+        width: 90%;
+    }
+    .menu-buttons a {
+        width: 50px;
+        padding: 8px;
+        font-size: 20px;
+        width: auto;
+        user-select: none;
+    }
+    /* Top Bar Styles */
+    #menu-btn {
+        position: fixed;   /* so it stays in place */
+        top: 6px;
+        left: 6px;
+        width: 50px;       /* make entire area clickable */
+        height: 50px;
+        font-size: 24px;
+        cursor: pointer;
+        color: white;
+        background-color: transparent;
+        border: none;
+
+        display: flex;          /* center the icon/text inside */
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;          /* above the menu */
+    }
+
+    #menu-btn:active {
+        outline: none;
+        box-shadow: none;
+    }
+    #menu-icon {
+        height: 48px;
+        width: 48px;
+        filter: invert(1);
+    }
+    .logo {
+        display: none;
+    }
+    .wallet-info {
+        margin-right: 10px;
+    }
+    /* Main Content Styles */
+    .main-content {
+        position: absolute;
+        margin-left: 0;
+        height: 100%;
+        width: 100% ;
+    }
+    .main-content h1, .main-content p, .earn-methods{
+        margin-right: 0;
+        padding: 5px;
+    }
+    .main-content p {
+        margin-top: -55px;
+        padding: 40px;
+        font-size: 16px;
+    }
+    /* Dashboard Styles */
+    .earn-methods button {
+        font-size: 16px;
+        padding: 5px;
+    }
+    .earn-methods {
+        margin-top: -37px;
+    }
+    .dashboard-elements {
+        margin-right: 0px;
+        padding: 20px;
+        margin-top: -50px;
+    }
+    .db-wallet, .db-statistics, .db-recent-activity {
+        min-width: 100%;
+        margin-left: 0;
+    }
+    .db-wallet h1 {
+        margin-top: 8px;
+    }
+    .db-wallet h2 {
+        margin-top: -5px;
+    }
+    .db-wallet p {
+        padding-bottom: 25px;
+        padding-top: 52px;
+    }
+
+    /* Chat Styles */
+    .select-country {
+        width: 100%;
+        margin-right: 0;
+        position: absolute;
+    }
+    .countries {
+        padding-bottom: 20px;
+    }
+    .selected-chat {
+        width: 100%;
+    }
+    .sc-bg {
+        height: auto;
+        max-height: 65%;
+        min-height: 50%;
+    }
+    /* Profile Styles */
+    .profile-background {
+        margin-right: 0;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    .profile-stand {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .profile-stand h1 {
+        text-align: left;
+        margin-left: 0;
+        font-size: 30px;
+        width: 90%;
+        margin-top: 10px;
+        margin-right: -20px;
+    }
+
+    .form-fill {
+        width: 85%;
+        padding: 10px;
+        margin-top: -24px;
+    }
+
+    .form-fill input {
+        width: 95%;
+        font-size: 16px;
+        margin-top: 0px;
+    }
+
+    .form-fill p {
+        font-size: 14px;
+        margin-top: 11px;
+    }
+    .form-fill #pp_word {
+        margin-top: 0px;
+    }
+    .form-elements {
+        margin-top: 10px;
+    }
+    .buttons-profile #log-out {
+        margin-left: 0px;
+    }
+    .buttons-profile {
+        width: 85%;
+    }
+    /* Wallet Styles */ 
+    .wallet-background {
+        width: 100%;
+    }
+    .my-wallet {
+        width: 100%;
+        flex-direction: column;
+        height: auto;
+        margin-right: 0;
+        align-items: center;
+        padding: 10px;
+        background-color: transparent;
+    }
+    .total-balance {
+        margin-left: 0px;
+        margin-top: 10px;
+        height: 60%;
+        background-color: transparent;
+    }
+    .total-balance button {
+        width: 200px;
+        background-color: transparent;
+    }
+    .statistics-label {
+        margin-top: -70px;
+        width: 100%;
+        height: 250px;
+        margin-left: 0px;
+    }
+    .statistics-top {
+        background-color: transparent;
+    }
+    .my-wallet h1 {
+        margin-top: -275px;
+    }
+    /* Watch Earn Styles */
+    .earn-methods button.active {
+        background-color: transparent;
+    }
+    .earn-methods {
+        padding: 0;
+    }
+    .earn-methods button {
+        padding: 10px;
+    }
+    .message-bar {
+        width: 60%;
+        height: 25%;
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 769px) {
+    #menu-btn {
+        display: none;
+    }
+}
