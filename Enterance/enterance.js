@@ -131,7 +131,7 @@ if (window.location.pathname.endsWith("register.html")) {
 
     // 🔗 Send data to backend
     try {
-      const response = await fetch("/api/register", {
+      const response = await fetch("https://gainchat-backend.onrender.com/api/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, email, password }),
@@ -195,7 +195,7 @@ if (window.location.pathname.endsWith("register.html")) {
     }
 
     try {
-      const response = await fetch("/api/verify-code", {
+      const response = await fetch("https://gainchat-backend.onrender.com/api/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, code }),
@@ -237,7 +237,7 @@ if (window.location.pathname.endsWith("login.html")) {
       }
 
       try {
-        const res = await fetch("/api/login", {
+        const res = await fetch("https://gainchat-backend.onrender.com/api/login", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email, password }),
