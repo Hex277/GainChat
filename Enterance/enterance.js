@@ -20,6 +20,11 @@ window.addEventListener("load", () => {
 });
 
 
+const API_BASE_URL =
+  window.location.hostname === "localhost"
+    ? "http://localhost:3000"
+    : "https://gainchat-backend.onrender.com";
+
 
 // ===============
 // 🧾 Register Page
@@ -131,7 +136,7 @@ if (window.location.pathname.endsWith("register.html")) {
 
     // 🔗 Send data to backend
     try {
-      const response = await fetch("https://gainchat-backend.onrender.com/api/register", {
+      const response = await fetch(`${API_BASE_URL}/api/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, email, password }),
@@ -195,7 +200,7 @@ if (window.location.pathname.endsWith("register.html")) {
     }
 
     try {
-      const response = await fetch("https://gainchat-backend.onrender.com/api/login", {
+      const response = await fetch(`${API_BASE_URL}/api/verify-code`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, code }),
@@ -237,7 +242,7 @@ if (window.location.pathname.endsWith("login.html")) {
       }
 
       try {
-        const res = await fetch("https://gainchat-backend.onrender.com/api/login", {
+        const res = await fetch(`${API_BASE_URL}/api/login`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email, password }),
