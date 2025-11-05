@@ -251,7 +251,7 @@ if (window.location.pathname.endsWith("login.html")) {
         const data = await res.json();
 
         if (res.ok) {
-          window.location.href = "dashboard.html"; // Redirect to dashboard or home
+          window.location.href = "/Workspace/dashboard.html"; // Redirect to dashboard or home
         } else {
             showMessage("❌ " + data.message);
         }
