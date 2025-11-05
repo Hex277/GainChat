@@ -80,6 +80,7 @@ if (window.location.pathname.endsWith("register.html")) {
 
   // Register button
   createBtn.addEventListener("click", async () => {
+    console.log("✅ Create button clicked");
     const username = usernameInput.value.trim();
     const email = emailInput.value.trim();
     const password = passwordInput.value.trim();
@@ -136,13 +137,16 @@ if (window.location.pathname.endsWith("register.html")) {
 
     // 🔗 Send data to backend
     try {
+      console.log("📤 Sending data to backend..."); 
       const response = await fetch(`${API_BASE_URL}/api/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, email, password }),
       });
-
+      console.log("📥 Got response:", response.status);
       const result = await response.json();
+
+      console.log("🧾 Backend returned:", result);
 
       if (!response.ok) {
         showMessage(`❌ ${result.message || "Registration failed"}`);
@@ -159,6 +163,7 @@ if (window.location.pathname.endsWith("register.html")) {
 
       setTimeout(() => verificationInput.focus(), 100);
     } catch (err) {
+      console.error("🔥 Register fetch error:", err);
       console.error(err);
       showMessage("❌ Server error. Please try again.");
     }
